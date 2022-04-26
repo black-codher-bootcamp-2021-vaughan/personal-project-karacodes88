@@ -1,3 +1,6 @@
+.mapbox-gl.css
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+.hornets{
+  size: 5px;
 }
