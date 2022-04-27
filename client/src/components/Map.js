@@ -13,7 +13,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
   const MAPBOX_TOKEN = "pk.eyJ1Ijoia2FyYTAxMjEiLCJhIjoiY2wyZ2JhcG1mMDFpYTNjbno3MG5kb3EwNSJ9.8Te14VkSLluQsTSolmd_DA"
 
-  function Map() {
+  function Map(props) {
+    const {profiles}=props
+    console.log(profiles)
     return (
       <ReactMapGl
         initialViewState={{
@@ -25,7 +27,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
-        <Marker longitude={-1.898075} latitude={52.5151746} color="red" />
+        {profiles && profiles.map(profile => <Marker longitude={profile.Location.Longitude}latitude={profile.Location.Latitude} color="red" />)}
+        
+        {/* <Marker longitude={-1.898075} latitude={52.5151746} color="red" /> */}
       </ReactMapGl>
     )};
   

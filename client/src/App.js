@@ -17,6 +17,8 @@ function App() {
 
 
   useEffect(() => {
+    console.log("profiles"+ profiles)
+    console.log('%j', profiles )
     async function getProfiles() {
       if (!profiles) {
         const response = await getAllProfiles();
@@ -27,15 +29,6 @@ function App() {
     getProfiles();
   }, [profiles]);
 
-  const renderProfile = (user) => {
-    return (
-      <p key={user._id}>
-        <h3>{user.Name} </h3> 
-        <img src={user.Picture} />
-         <p> {user.Location}</p>
-      </p>
-    );
-  }
 
 
 
@@ -48,15 +41,19 @@ function App() {
         render={() => (
             <div>
           <Search/>
-          <Info/>
-          <BasicCard/>
+      
+        
             <ul>
-            {profiles && profiles.length > 0 ? (
+              {console.log(profiles +"profiles")}
+            {
+            
+            profiles && profiles.length > 0 ? (
              profiles.map((profile) => (<BasicCard sighting={profile} ></BasicCard>))
               ) : (
                 <p>No profiles found</p>
               )}
             </ul>
+
           </div>
         )}
       />
@@ -65,7 +62,7 @@ function App() {
         exact
         path="/Map"
         render={() => (
-        <Map map = {ReactMapGl}/>
+        <Map profiles={profiles}/>
 
 
 

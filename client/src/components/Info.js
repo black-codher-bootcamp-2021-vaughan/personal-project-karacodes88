@@ -15,8 +15,11 @@ const bull = (
   </Box>
 );
 
+
 export default function BasicCard({sighting}) {
-    const {_id,Name,Picture,Location} = sighting
+    const {Name,Picture,Location} = sighting
+    console.log( "sightings"+ sighting );
+
   return (
     <Card sx={{ minWidth: 100 }}>
       <CardContent>
