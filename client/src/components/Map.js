@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
-
-// export default function Map() {
-//   const [viewport, setViewport] = useState({
-//     latitude: 52.5151746,
-//     longitude: -1.898075,
-//     width: "100vw",
-//     height: "100vh",
-//     zoom: 10
-//   });
+import ProfileMarker from "./ProfileMarker";
 
   const MAPBOX_TOKEN = "pk.eyJ1Ijoia2FyYTAxMjEiLCJhIjoiY2wyZ2JhcG1mMDFpYTNjbno3MG5kb3EwNSJ9.8Te14VkSLluQsTSolmd_DA"
 
   function Map(props) {
     const {profiles}=props
+    
     console.log(profiles)
     return (
       <ReactMapGl
@@ -27,11 +20,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
-        {profiles && profiles.map(profile => <Marker longitude={profile.Location.Longitude}latitude={profile.Location.Latitude} color="red" />)}
-        
-        {/* <Marker longitude={-1.898075} latitude={52.5151746} color="red" /> */}
-      </ReactMapGl>
-    )};
+        {profiles && profiles.map(profile => <ProfileMarker profile={profile}longitude={profile.Location.Longitude}latitude={profile.Location.Latitude} color="red" />)}
+       
+
+    </ReactMapGl>
+  );
+}
   
-    
-  export default Map;
+
+    export default Map;
+
