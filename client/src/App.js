@@ -8,13 +8,16 @@ import Info from "./components/Info";
 import BasicCard from "./components/Info";
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
+import { UserForm } from './components/UserForm';
+
+
 
 
 
 
 function App() {
   const [profiles, setProfiles] = useState(null);
-
+  
 
   useEffect(() => {
     console.log("profiles"+ profiles)
@@ -30,9 +33,6 @@ function App() {
   }, [profiles]);
 
 
-
-
-
   return(
     <Router>
       <Route
@@ -41,35 +41,35 @@ function App() {
         render={() => (
             <div>
           <Search/>
-      
-        
-            <ul>
-              {console.log(profiles +"profiles")}
-            {
-            
-            profiles && profiles.length > 0 ? (
-             profiles.map((profile) => (<BasicCard sighting={profile} ></BasicCard>))
-              ) : (
-                <p>No profiles found</p>
-              )}
-            </ul>
-
+          <About />
+          <UserForm />
           </div>
         )}
       />
-      <Route exact path="/about" render={() => <About />} />
+      <Route exact path="/about" render={() => 
+       <ul>
+    {console.log(profiles +"profiles")}
+  {
+  
+  profiles && profiles.length > 0 ? (
+   profiles.map((profile) => (<BasicCard sighting={profile} ></BasicCard>))
+    ) : (
+      <p>No profiles found</p>
+    )}
+  </ul>} />
       <Route
         exact
         path="/Map"
         render={() => (
+    
         <Map profiles={profiles}/>
-
+       
 
 
 
         )}
       />
-      {/* <BasketTotal /> */}
+    
     </Router>
   );
 

@@ -7,8 +7,8 @@ const About = (props) => {
       <h1>About</h1>
       <div className="breadcrumb">
         <Link to="/"> Home </Link> |<Link to="/about"> About </Link> |
-        <Link to="/basket" className="productLink">
-          Sighting ({props.bookLength})
+        <Link to="/"> Map"
+          map ({props.bookLength})
         </Link>
       </div>
       <div className="page">
