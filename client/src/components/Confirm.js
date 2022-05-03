@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 
@@ -22,7 +22,7 @@ export class Confirm extends Component {
       values: { firstName, lastName, email, descripition, postcode, image }
     } = this.props;
     return (
-      <MuiThemeProvider>
+     
         <>
           <Dialog
             open
@@ -65,7 +65,7 @@ export class Confirm extends Component {
             >Confirm & Continue</Button>
           </Dialog>
         </>
-      </MuiThemeProvider>
+   
     );
   }
 }

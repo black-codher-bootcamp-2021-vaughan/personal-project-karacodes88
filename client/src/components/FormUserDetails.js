@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -12,9 +12,9 @@ export class FormUserDetails extends Component {
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange} = this.props;
     return (
-      <MuiThemeProvider>
+     
         <>
           <Dialog
             open
@@ -56,7 +56,7 @@ export class FormUserDetails extends Component {
             >Continue</Button>
           </Dialog>
         </>
-      </MuiThemeProvider>
+     
     );
   }
 }

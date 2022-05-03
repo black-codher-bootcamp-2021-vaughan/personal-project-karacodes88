@@ -3,25 +3,20 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./components/About";
 import Search from "./components/Search";
 import Map from "./components/Map";
-import ReactMapGl, {Marker, Popup} from "react-map-gl";
+import ReactMapGl, { Marker, Popup } from "react-map-gl";
 import Info from "./components/Info";
 import BasicCard from "./components/Info";
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
-import { UserForm } from './components/UserForm';
-
-
-
-
-
+import { UserForm } from "./components/UserForm";
+import { Container, Grid, Stack } from "@mui/material";
 
 function App() {
   const [profiles, setProfiles] = useState(null);
-  
 
   useEffect(() => {
-    console.log("profiles"+ profiles)
-    console.log('%j', profiles )
+    console.log("profiles" + profiles);
+    console.log("%j", profiles);
     async function getProfiles() {
       if (!profiles) {
         const response = await getAllProfiles();
@@ -32,70 +27,52 @@ function App() {
     getProfiles();
   }, [profiles]);
 
-
-  return(
+  return (
     <Router>
       <Route
         exact
         path="/"
         render={() => (
-            <div>
-          <Search/>
-          <About />
-          <UserForm />
+          <div>
+            <Search />
+            <About />
+            <UserForm/>
           </div>
         )}
       />
-      <Route exact path="/about" render={() => 
-       <ul>
-    {console.log(profiles +"profiles")}
-  {
-  
-  profiles && profiles.length > 0 ? (
-   profiles.map((profile) => (<BasicCard sighting={profile} ></BasicCard>))
-    ) : (
-      <p>No profiles found</p>
-    )}
-  </ul>} />
       <Route
         exact
-        path="/Map"
+        path="/about"
         render={() => (
-    
-        <Map profiles={profiles}/>
-       
+          <div>
+           
+            <Container>
+              <Grid container spacing={2}>
+                
+                {console.log(profiles + "profiles")}
 
-
-
+                <Grid item xs={4}>
+                  <Stack spacing={2}>
+                    {profiles && profiles.length > 0 ? (
+                      profiles.map((beeAlert) => (
+                        <BasicCard sighting={beeAlert}></BasicCard>
+                      ))
+                    ) : (
+                      <p>No profiles found</p>
+                    )}
+                  </Stack>
+                </Grid>
+              </Grid>
+            </Container>
+          </div>
         )}
       />
-    
+      <Route exact path="/Map" render={() => <Map profiles={profiles} />} />
     </Router>
   );
-
-
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // function App() {
 //   const [profiles, setProfiles] = useState(null);
@@ -108,15 +85,13 @@ export default App;
 //         setProfiles(response);
 //       }
 //     }
-    
-    
+
 //     getProfiles();
 //   }, [profiles]);
 
-
 //   return (
 //     <div>
-      
+
 //       <p>
 //         {profiles && profiles.length > 0 ? (
 //           profiles.map((profile) => (<BasicCard sighting={profile} ></BasicCard>))
@@ -137,7 +112,7 @@ export default App;
 //         render={() => (
 //           <div>
 //           <ul>
-            
+
 //             {profiles && profiles.length > 0 ? (
 //               profiles.map((profile) => (<BasicCard sighting={profile} ></BasicCard>))
 //             ) : (
@@ -146,7 +121,7 @@ export default App;
 //           </ul>
 //            <Card/>
 //         </div>
-        
+
 //         )}
 //       />
 //       <Route exact path="/about" render={() => <About />} />
@@ -162,4 +137,3 @@ export default App;
 //       {/* <BasketTotal /> */}
 //     </Router>
 //   );
-
