@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./components/About";
-import Search from "./components/Search";
 import Map from "./components/Map";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 import Info from "./components/Info";
@@ -10,6 +9,11 @@ import BasicCard from "./components/Info";
 import { getAllProfiles } from "./services/profileService";
 import { UserForm } from "./components/UserForm";
 import { Container, Grid, Stack } from "@mui/material";
+import NavBar from "./components/NavBar";
+
+
+
+
 
 function App() {
   const [profiles, setProfiles] = useState(null);
@@ -34,7 +38,7 @@ function App() {
         path="/"
         render={() => (
           <div>
-            <Search />
+            <NavBar/>
             <About />
             <UserForm/>
           </div>
@@ -45,7 +49,7 @@ function App() {
         path="/about"
         render={() => (
           <div>
-           
+           <NavBar/>
             <Container>
               <Grid container spacing={2}>
                 

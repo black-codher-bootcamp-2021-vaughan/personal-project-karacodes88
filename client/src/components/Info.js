@@ -4,12 +4,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions, Grid } from "@mui/material";
+// import NavBar from "./ NavBar";
 
 export default function MultiActionAreaCard({ sighting }) {
   const { Name, Picture, Location } = sighting;
   console.log("sightings" + sighting);
 
   return (
+    // <><NavBar />
     
     <Card>
       <CardActionArea>
@@ -18,8 +20,7 @@ export default function MultiActionAreaCard({ sighting }) {
           height="140"
           image="https://4.bp.blogspot.com/-2JgFdwuS200/Vd3SFzpsbCI/AAAAAAAAHcg/70pbPPZAWac/s1600/hornet1.jpg"
           padding
-          top="20px"
-        />
+          top="20px" />
         <CardContent>
           <div>
             <p> {Name}</p>

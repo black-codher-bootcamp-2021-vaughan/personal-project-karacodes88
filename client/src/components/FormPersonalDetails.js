@@ -44,15 +44,7 @@ export class FormPersonalDetails extends Component {
               fullWidth
             />
             <br />
-            <TextField
-              placeholder="Enter Your image"
-              label="Image"
-              onChange={handleChange('image')}
-              defaultValue={values.image}
-              margin="large"
-              fullWidth
-            />
-            <br />
+            
 
             <Button
               color="secondary"
