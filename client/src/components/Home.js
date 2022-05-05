@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 
-const About = () => {
+const Home = () => {
   return (
    <div className="header">
 
@@ -19,5 +19,4 @@ const About = () => {
   );
 };
 
-
-export default About;
+export default Home;

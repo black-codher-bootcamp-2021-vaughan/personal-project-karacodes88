@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import About from "./components/About";
 import Map from "./components/Map";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 import Info from "./components/Info";
@@ -10,7 +9,7 @@ import { getAllProfiles } from "./services/profileService";
 import { UserForm } from "./components/UserForm";
 import { Container, Grid, Stack } from "@mui/material";
 import NavBar from "./components/NavBar";
-
+import Home from "./components/Home";
 
 
 
@@ -39,7 +38,7 @@ function App() {
         render={() => (
           <div>
             <NavBar/>
-            <About />
+            <Home/>
             <UserForm/>
           </div>
         )}

@@ -19,7 +19,7 @@ export default function MultiActionAreaCard({ sighting }) {
           component="img"
           height="140"
           image="https://4.bp.blogspot.com/-2JgFdwuS200/Vd3SFzpsbCI/AAAAAAAAHcg/70pbPPZAWac/s1600/hornet1.jpg"
-          padding
+          padding= "20px"
           top="20px" />
         <CardContent>
           <div>
