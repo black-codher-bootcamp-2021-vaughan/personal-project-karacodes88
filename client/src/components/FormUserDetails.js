@@ -1,34 +1,26 @@
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-
-
-
-
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export class FormUserDetails extends Component {
-  continue = e => {
+  continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
   };
 
   render() {
-    const { values, handleChange} = this.props;
+    const { values, handleChange } = this.props;
     return (
-     
-        <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
+      <>
+        <div className="form">
+          <Dialog open fullWidth maxWidth="sm">
             <AppBar title="Enter User Details" />
             <TextField
               placeholder="Enter Your First Name"
               label="First Name"
-              onChange={handleChange('firstName')}
+              onChange={handleChange("firstName")}
               defaultValue={values.firstName}
               margin="normal"
               fullWidth
@@ -37,7 +29,7 @@ export class FormUserDetails extends Component {
             <TextField
               placeholder="Enter Your Last Name"
               label="Last Name"
-              onChange={handleChange('lastName')}
+              onChange={handleChange("lastName")}
               defaultValue={values.lastName}
               margin="normal"
               fullWidth
@@ -46,20 +38,18 @@ export class FormUserDetails extends Component {
             <TextField
               placeholder="Enter Your Email"
               label="Email"
-              onChange={handleChange('email')}
+              onChange={handleChange("email")}
               defaultValue={values.email}
               margin="normal"
               fullWidth
             />
             <br />
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
+            <Button color="primary" variant="contained" onClick={this.continue}>
+              Continue
+            </Button>
           </Dialog>
-        </>
-     
+        </div>
+      </>
     );
   }
 }

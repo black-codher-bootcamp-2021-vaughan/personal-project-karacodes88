@@ -20,19 +20,21 @@ export class FormPersonalDetails extends Component {
     return (
      
         <>
+        <div style={{'borderRadius':'20px'}} >
           <Dialog
             open
             fullWidth
             maxWidth='sm'
           >
             <AppBar title="Enter Personal Details" />
-            <TextField
+            <TextField style={{backgroundColor: "red"}}
               placeholder="Enter where you seen asian Hornets"
               label="description"
               onChange={handleChange('description')}
               defaultValue={values.descrpition}
               margin="normal"
               fullWidth
+        
             />
             <br />
             <TextField
@@ -58,6 +60,7 @@ export class FormPersonalDetails extends Component {
               onClick={this.continue}
             >Continue</Button>
           </Dialog>
+          </div>
         </>
      
     );

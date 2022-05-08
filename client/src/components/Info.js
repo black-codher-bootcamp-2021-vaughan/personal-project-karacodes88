@@ -6,9 +6,16 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions, Grid } from "@mui/material";
 // import NavBar from "./ NavBar";
 
+
 export default function MultiActionAreaCard({ sighting }) {
   const { Name, Picture, Location } = sighting;
   console.log("sightings" + sighting);
+
+
+
+
+
+
 
   return (
     // <><NavBar />
@@ -18,7 +25,7 @@ export default function MultiActionAreaCard({ sighting }) {
         <CardMedia
           component="img"
           height="140"
-          image="https://4.bp.blogspot.com/-2JgFdwuS200/Vd3SFzpsbCI/AAAAAAAAHcg/70pbPPZAWac/s1600/hornet1.jpg"
+          image="https://www.phipps.conservatory.org/assets/images/as_blog_image/original_Vespa_mandarinia2009.JPG"
           padding= "20px"
           top="20px" />
         <CardContent>

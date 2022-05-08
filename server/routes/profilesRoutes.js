@@ -8,7 +8,7 @@ const profileRoutes = (app) => {
     return res.status(200).send(profiles);
   });
 
-  app.post(`/api/profile`, async (req, res) => {
+  app.post(`/api/bees`, async (req, res) => {
     const profile = await Profile.create(req.body);
 
     return res.status(201).send({
@@ -39,5 +39,8 @@ const profileRoutes = (app) => {
     });
   });
 };
+
+
+
 
 module.exports = profileRoutes;

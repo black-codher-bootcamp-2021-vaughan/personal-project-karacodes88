@@ -3,6 +3,7 @@ import Dialog from "@material-ui/core/Dialog";
 import AppBar from "@material-ui/core/AppBar";
 import { List, ListItem, ListItemText, Input } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
+import { postSighting } from "../services/profileService";
 
 export class Confirm extends Component {
   continue = (e) => {
@@ -16,10 +17,21 @@ export class Confirm extends Component {
     this.props.prevStep();
   };
 
+
+
   render() {
     const {
       values: { firstName, lastName, email, descripition, postcode, image },
     } = this.props;
+    const sighting={
+      Name: firstName,
+      Lastname: lastName,
+      Email: email,
+      Picture:image,
+      Postcode: postcode
+    }
+
+
     return (
       <>
         <Dialog open fullWidth maxWidth="sm">
@@ -47,9 +59,9 @@ export class Confirm extends Component {
                 multiple
                 type="file"
               />
-              <Button variant="contained" component="span">
-                Upload Image
-              </Button>
+             <Button color="primary" variant="contained" onClick={this.continue}>
+              Upload Image
+            </Button>
             </label>
           </List>
 
@@ -59,7 +71,7 @@ export class Confirm extends Component {
             Back
           </Button>
 
-          <Button color="primary" variant="contained" onClick={this.continue}>
+          <Button color="primary" variant="contained" onClick={()=> postSighting(sighting)}>
             Confirm & Continue
           </Button>
         </Dialog>
