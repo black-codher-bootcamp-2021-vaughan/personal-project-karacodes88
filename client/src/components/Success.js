@@ -17,7 +17,9 @@ export const Success =()=> {
           <AppBar title="Success" />
           <h1>Thank You For Your Submission</h1>
           <p>You will get an email with further instructions.</p>
-          <button onClick={() => setOpen(false)}>
+          <button 
+            color="secondary"
+            variant="contained"onClick={() => setOpen(false)}>
             close me
           </button>
         </Dialog>

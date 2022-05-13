@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -10,11 +8,18 @@ const Home = () => {
           src={`https://australiascience.tv/app/uploads/2020/01/200113_bees_bumble-bees_lead.jpg`}
         />
       </div>
+      <h2  className= "title" style={ { position: 'absolute',top: '5rem',  zIndex: '100'} }>Hi have you seen any Asian Hornets?? <br>
+      </br> My name is Kara this app is about Asian Hornets. 
+      Here we track any sighting that people see. </h2>
+  
       <div>
-        <h2> welcome to asian hornets sighting </h2>
+       
       </div>
     </div>
   );
 };
+
+
+
 
 export default Home;

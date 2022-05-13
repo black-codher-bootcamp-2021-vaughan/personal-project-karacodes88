@@ -17,20 +17,17 @@ export class Confirm extends Component {
     this.props.prevStep();
   };
 
-
-
   render() {
     const {
       values: { firstName, lastName, email, descripition, postcode, image },
     } = this.props;
-    const sighting={
+    const sighting = {
       Name: firstName,
       Lastname: lastName,
       Email: email,
-      Picture:image,
-      Postcode: postcode
-    }
-
+      Picture: image,
+      Postcode: postcode,
+    };
 
     return (
       <>
@@ -59,9 +56,13 @@ export class Confirm extends Component {
                 multiple
                 type="file"
               />
-             <Button color="primary" variant="contained" onClick={this.continue}>
-              Upload Image
-            </Button>
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={this.continue}
+              >
+                Upload Image
+              </Button>
             </label>
           </List>
 
@@ -71,9 +72,17 @@ export class Confirm extends Component {
             Back
           </Button>
 
-          <Button color="primary" variant="contained" onClick={()=> postSighting(sighting)}>
-            Confirm & Continue
-          </Button>
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => postSighting(sighting)}
+          >
+             <Button
+             onClick={this.continue}>
+             
+             Confirm & Continue
+             </Button>
+            </Button> 
         </Dialog>
       </>
     );

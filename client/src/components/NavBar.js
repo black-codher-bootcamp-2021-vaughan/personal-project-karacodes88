@@ -60,7 +60,7 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="sticky"
-        style={{ backgroundColor: "#991e8a", padding: "5px" }}
+        style={{ backgroundColor: "#FEDD00",color: "black", padding: "5px",}}
       >
         <Toolbar>
           <IconButton
@@ -88,7 +88,7 @@ export default function NavBar() {
             onChange={(e, value) => setValue(value)}
           >
             <Tab label="Home" component={Link} to="/"></Tab>
-            <Tab label="About" component={Link} to="/about"></Tab>
+            <Tab label="About" component={Link} to="/About"></Tab>
             <Tab label="Map" component={Link} to="/Map"></Tab>
           </Tabs>
           <Search>
